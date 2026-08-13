@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>株式会社ミナチカ｜みんなに、ちからを。</title>
+<meta name="description" content="採用のすべてを知る参謀が、経営の隣に。採用アドバイザリー・業務改善アドバイザリー・キャリア教育を提供する株式会社ミナチカ。">
+<style>
+  :root{
+    --navy:#12294A; --navy2:#1B3A63; --navy3:#24406B;
+    --line:#34568A; --gold:#D9A441; --gold-d:#c2902f;
+    --white:#FFFFFF; --ice:#CFE0F5; --muted:#93A6C2;
+    --maxw:1120px;
+    --font:'BIZ UDPGothic','Meiryo','Hiragino Sans','Yu Gothic',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--font); color:var(--white); background:var(--navy);
+    line-height:1.75; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    font-size:17px;
+  }
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block;max-width:100%}
+  section{padding:96px 24px}
+  .wrap{max-width:var(--maxw);margin:0 auto}
+  .kicker{color:var(--gold);font-weight:700;letter-spacing:.12em;font-size:15px;margin-bottom:14px}
+  h2.title{font-size:clamp(26px,4vw,40px);font-weight:700;line-height:1.35;margin-bottom:18px}
+  .lead{color:var(--ice);font-size:clamp(16px,2vw,19px);margin-bottom:8px}
+  .gold{color:var(--gold)}
+  .center{text-align:center}
+
+  /* ---------- compass mark ---------- */
+  .compass{color:var(--gold)}
+  .compass svg{width:100%;height:100%}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(18,41,74,.86);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:19px;letter-spacing:.02em}
+  .brand .mark{width:34px;height:34px;flex:0 0 34px}
+  .navlinks{display:flex;gap:26px;align-items:center;font-size:15px;color:var(--ice)}
+  .navlinks a{transition:color .2s} .navlinks a:hover{color:var(--gold)}
+  .btn{
+    display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;
+    padding:11px 22px;border-radius:999px;font-size:15px;transition:transform .15s,background .2s;
+    border:none;cursor:pointer;
+  }
+  .btn:hover{background:var(--gold-d);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--gold);border:1.5px solid var(--gold)}
+  .btn-ghost:hover{background:rgba(217,164,65,.12);color:var(--gold)}
+  @media(max-width:820px){.navlinks{display:none}}
+  @media(max-width:560px){
+    .nav{padding:12px 16px;gap:10px}
+    .brand{font-size:15px;gap:8px}
+    .brand .mark{width:26px;height:26px;flex:0 0 26px}
+    .btn{padding:9px 15px;font-size:13px}
+    section{padding:64px 20px}
+    #hero{padding:84px 20px 68px}
+  }
+
+  /* ---------- hero ---------- */
+  #hero{position:relative;padding:120px 24px 110px;overflow:hidden}
+  .hero-compass{
+    position:absolute;right:-60px;top:50%;transform:translateY(-50%);
+    width:min(46vw,560px);height:min(46vw,560px);opacity:.08;color:var(--ice);pointer-events:none;
+  }
+  .hero-tag{color:var(--gold);font-weight:700;letter-spacing:.2em;font-size:clamp(15px,2vw,18px);margin-bottom:20px}
+  .hero h1{font-size:clamp(34px,6vw,62px);font-weight:700;line-height:1.12;letter-spacing:.01em}
+  .hero .rule{width:72px;height:4px;background:var(--gold);border-radius:2px;margin:26px 0}
+  .hero .catch{font-size:clamp(20px,3.2vw,32px);font-weight:700;line-height:1.5}
+  .hero .sub{color:var(--ice);margin-top:20px;font-size:clamp(15px,2vw,18px);max-width:640px}
+  .hero .cta{margin-top:38px;display:flex;gap:14px;flex-wrap:wrap}
+
+  /* ---------- generic cards ---------- */
+  .grid{display:grid;gap:22px}
+  .card{
+    background:var(--navy2);border:1px solid var(--line);border-radius:16px;padding:30px 28px;
+  }
+  .card h3{font-size:20px;font-weight:700;margin-bottom:6px}
+  .icon-badge{
+    width:54px;height:54px;border-radius:14px;background:var(--gold);color:var(--navy);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;flex:0 0 54px;
+  }
+  .icon-badge svg{width:28px;height:28px}
+  .pill{display:inline-block;background:var(--navy3);color:var(--ice);border:1px solid var(--line);
+    border-radius:999px;padding:6px 14px;font-size:14px;margin:4px 6px 0 0}
+
+  .sec-alt{background:linear-gradient(180deg,#12294A 0%,#14315A 100%)}
+
+  /* ---------- mission ---------- */
+  .mission-grid{display:grid;grid-template-columns:1.4fr .9fr;gap:40px;align-items:center}
+  .quote{font-size:clamp(20px,2.6vw,27px);font-weight:700;line-height:1.6}
+  .quote .qmark{color:var(--gold);font-size:44px;line-height:0;vertical-align:-6px;margin-right:4px}
+  .company-box{background:var(--navy2);border:1px solid var(--line);border-radius:16px;padding:28px}
+  .company-box dt{color:var(--gold);font-weight:700;font-size:14px;margin-top:16px}
+  .company-box dt:first-child{margin-top:0}
+  .company-box dd{color:var(--white);font-size:17px}
+  @media(max-width:800px){.mission-grid{grid-template-columns:1fr}}
+
+  /* ---------- challenge ---------- */
+  .two{grid-template-columns:1fr 1fr}
+  .card .seg-head{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+  .card .seg-sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+  .checks li{list-style:none;display:flex;gap:10px;align-items:flex-start;margin:12px 0;color:var(--ice)}
+  .checks li::before{content:"";flex:0 0 20px;height:20px;margin-top:4px;
+    background:var(--gold);border-radius:50%;
+    -webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z' fill='black'/></svg>") center/14px no-repeat;
+            mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z' fill='black'/></svg>") center/14px no-repeat;}
+
+  /* ---------- strength ---------- */
+  .channels{grid-template-columns:repeat(3,1fr);margin-bottom:26px}
+  .chan{background:var(--navy2);border:1px solid var(--gold);border-radius:14px;padding:22px 18px;text-align:center}
+  .chan b{font-size:21px;font-weight:700;display:block}
+  .chan span{color:var(--ice);font-size:15px}
+  .three{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:800px){.two,.channels,.three{grid-template-columns:1fr}}
+
+  /* ---------- services ---------- */
+  .svc{display:flex;gap:22px;align-items:flex-start}
+  .svc .no{color:var(--gold);font-weight:700;font-size:34px;line-height:1;flex:0 0 auto;width:58px}
+  .svc h3{font-size:22px;margin-bottom:8px}
+  .svc p{color:var(--ice)}
+  .svc + .svc{margin-top:22px;border-top:1px solid var(--line);padding-top:26px}
+  .svc .tagrow{margin-top:10px}
+  .domain-label{color:var(--gold);font-weight:700;font-size:15px;letter-spacing:.08em;margin:34px 0 14px}
+
+  /* ---------- message / profile ---------- */
+  .msg-grid{display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:start}
+  .profile-card{background:var(--navy2);border:1px solid var(--line);border-radius:18px;padding:30px;text-align:center}
+  .profile-card .avatar{width:120px;height:120px;margin:0 auto 18px;color:var(--gold)}
+  .profile-card .pname{font-size:22px;font-weight:700}
+  .profile-card .prole{color:var(--ice);font-size:15px;margin-top:4px}
+  .profile-card .pyears{color:var(--gold);font-weight:700;margin-top:10px}
+  .greeting p{margin-bottom:18px;color:var(--ice);font-size:17px}
+  .greeting .sign{color:var(--white);font-weight:700;margin-top:4px}
+  .timeline{margin-top:30px;border-top:1px solid var(--line);padding-top:24px}
+  .tl{display:grid;grid-template-columns:90px 1fr;gap:18px;padding:11px 0}
+  .tl .yr{color:var(--gold);font-weight:700;font-size:15px}
+  .tl .ev{color:var(--ice);font-size:16px}
+  @media(max-width:800px){.msg-grid{grid-template-columns:1fr}.profile-card{max-width:340px;margin:0 auto}}
+
+  /* ---------- contact ---------- */
+  #contact{text-align:center;background:linear-gradient(180deg,#14315A 0%,#12294A 100%)}
+  #contact .hilite{display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;
+    padding:8px 20px;border-radius:10px;font-size:clamp(20px,3vw,30px);margin:6px 0}
+  .note{color:var(--muted);font-size:15px;margin-top:22px}
+
+  /* ---------- footer ---------- */
+  footer{background:#0d203c;border-top:1px solid var(--line);padding:34px 24px;color:var(--muted);font-size:14px}
+  .foot{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .foot .fbrand{display:flex;align-items:center;gap:10px;color:var(--white);font-weight:700;font-size:16px}
+  .foot .fbrand .mark{width:26px;height:26px}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- compass SVG symbol -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="compass" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="3"/>
+    <polygon points="50,18 58,50 50,82 42,50" fill="currentColor"/>
+    <circle cx="50" cy="50" r="6" fill="var(--navy)" stroke="currentColor" stroke-width="2"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#hero"><span class="mark compass"><svg><use href="#compass"/></svg></span>株式会社ミナチカ</a>
+    <nav class="navlinks">
+      <a href="#mission">ミッション</a>
+      <a href="#strength">強み</a>
+      <a href="#services">サービス</a>
+      <a href="#message">代表挨拶</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <a class="btn" href="#contact">ご相談はこちら</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-compass compass"><svg><use href="#compass"/></svg></div>
+    <div class="wrap">
+      <div class="hero-tag">みんなに、ちからを。</div>
+      <h1>株式会社ミナチカ</h1>
+      <div class="rule"></div>
+      <div class="catch">「<span class="gold">選ぶ側</span>」も「<span class="gold">選ばれる側</span>」も、知り尽くす。</div>
+      <p class="sub">人材領域20年の実戦知で、企業の採用と、これからの人材を導く。<br>採用アドバイザリー・業務改善アドバイザリー・キャリア教育を提供します。</p>
+      <div class="cta">
+        <a class="btn" href="#contact">無料で相談する</a>
+        <a class="btn btn-ghost" href="#services">サービスを見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section id="mission" class="sec-alt">
+    <div class="wrap reveal">
+      <div class="kicker">MISSION ── 社名に込めた想い</div>
+      <h2 class="title">ミナチカ＝「みんなにちからを」</h2>
+      <div class="mission-grid" style="margin-top:30px">
+        <div>
+          <p class="quote"><span class="qmark">“</span>働く人、採用する企業、これから社会に出る学生。関わるすべての人が、自分の“ちから”を発揮できる社会をつくる。</p>
+          <p class="lead" style="margin-top:22px">人材の世界で20年培った知見を、企業の経営と次世代のキャリアへ還元します。</p>
+        </div>
+        <dl class="company-box">
+          <dt>社名</dt><dd>株式会社ミナチカ</dd>
+          <dt>代表者</dt><dd>代表取締役社長　野入 卓也</dd>
+          <dt>設立</dt><dd>2026年10月（予定）</dd>
+          <dt>事業内容</dt><dd>採用／業務改善／キャリア教育</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHALLENGE -->
+  <section id="challenge">
+    <div class="wrap reveal">
+      <div class="kicker">CHALLENGE ── お客様の課題</div>
+      <h2 class="title">こんなお悩み、ありませんか？</h2>
+      <div class="grid two" style="margin-top:30px">
+        <div class="card">
+          <div class="seg-head">
+            <span class="icon-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 21V7l6-4 6 4v3h6v11h-8v-4h-4v4H3zm2-2h4v-4h6v4h4V12h-6V8.1L9 5.4 5 8.1V19z"/></svg></span>
+            <h3>企業のみなさま</h3>
+          </div>
+          <p class="seg-sub">採用と業務改善に課題を持つ中小企業</p>
+          <ul class="checks">
+            <li>良い人がなかなか採れない</li>
+            <li>採用戦略・チャネルが不明確</li>
+            <li>AI活用・業務改善が進まない</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="seg-head">
+            <span class="icon-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 1 8l11 5 9-4.1V15h2V8L12 3zM5 13.2V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.2-7-3.2z"/></svg></span>
+            <h3>教育機関のみなさま</h3>
+          </div>
+          <p class="seg-sub">対象：大学生・高校生</p>
+          <ul class="checks">
+            <li>学生に響くキャリア教育をしたい</li>
+            <li>現場のリアルな話を届けたい</li>
+            <li>学生の就職実績を伸ばしたい</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRENGTH -->
+  <section id="strength" class="sec-alt">
+    <div class="wrap reveal">
+      <div class="kicker">STRENGTH ── 私たちの強み</div>
+      <h2 class="title">採用の“全体像”を知る、数少ない存在。</h2>
+      <p class="lead" style="margin-bottom:26px">採用がうまくいかない原因の多くは「部分最適」。ミナチカは全体像を俯瞰し、戦略と判断基準からご支援します。</p>
+
+      <div class="domain-label">採用チャネルを網羅</div>
+      <div class="grid channels">
+        <div class="chan"><b>アルバイト</b><span>スポット・パート採用</span></div>
+        <div class="chan"><b>新卒採用</b><span>求人メディア・大学連携</span></div>
+        <div class="chan"><b>中途採用</b><span>求人メディア ＆ 人材紹介</span></div>
+      </div>
+      <p class="lead" style="margin-bottom:34px">採用マーケットの“川上から川下”まで、すべてのチャネルを実務で経験。</p>
+
+      <div class="grid three">
+        <div class="card">
+          <span class="icon-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 3h4v4h-4V3zM3 17h4v4H3v-4zm14 0h4v4h-4v-4zM11 8h2v3h6v3h-2v-1h-4v1H9v-3h2V8z"/></svg></span>
+          <h3>チャネル網羅</h3>
+          <p class="lead">あらゆる採用手法を実務で経験。最適なチャネルを設計できる。</p>
+        </div>
+        <div class="card">
+          <span class="icon-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.8l-.3-.3a6.5 6.5 0 1 0-.7.7l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg></span>
+          <h3>企業側の視点</h3>
+          <p class="lead">「誰を・なぜ採るか」。企業の意思決定の内側を熟知。</p>
+        </div>
+        <div class="card">
+          <span class="icon-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 11a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm-8 0a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm0 2c-2.3 0-6 1.2-6 3.5V19h8v-2.5c0-.8.4-1.6 1-2.2A9.7 9.7 0 0 0 8 13zm8 0c-.5 0-1 0-1.5.1 1 .8 1.5 1.7 1.5 2.9V19h6v-2.5c0-2.3-3.7-3.5-6-3.5z"/></svg></span>
+          <h3>紹介会社の視点</h3>
+          <p class="lead">転職者を“どう見極め・推薦するか”。判断の裏側まで知り尽くす。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap reveal">
+      <div class="kicker">SERVICE ── サービス全体像</div>
+      <h2 class="title">2つの領域を、3つのアドバイザリーで。</h2>
+
+      <div class="domain-label">企業のみなさまへ</div>
+      <div class="card">
+        <div class="svc">
+          <div class="no">01</div>
+          <div>
+            <h3>採用アドバイザリーサービス</h3>
+            <p>貴社の“採用の参謀”として、採用戦略の設計・プロセスの改善・チャネル選定・採用ツールの作成（別途有料・応相談）まで、戦略から伴走します。</p>
+            <div class="tagrow">
+              <span class="pill">採用戦略の設計</span><span class="pill">プロセス改善</span><span class="pill">チャネル選定</span><span class="pill">期間契約／案件単位</span>
+            </div>
+          </div>
+        </div>
+        <div class="svc">
+          <div class="no">02</div>
+          <div>
+            <h3>業務改善アドバイザリーサービス</h3>
+            <p>生成AI活用を軸に、“今いる人の生産性”を高める業務改善を助言。ツール選定から社内定着まで、採用を知り尽くした視点で伴走します。</p>
+            <div class="tagrow">
+              <span class="pill">生成AI活用</span><span class="pill">ツール選定・設計</span><span class="pill">社内定着支援</span><span class="pill">業務効率化</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="domain-label">教育機関のみなさまへ</div>
+      <div class="card">
+        <div class="svc">
+          <div class="no">03</div>
+          <div>
+            <h3>キャリア教育ガイダンスの受託</h3>
+            <p>人材業界20年の代表が直接登壇。採用の実態、評価される経歴・経験、逆算のキャリア設計など、学生の就職実績向上につながる授業・ガイダンスを、大学生・高校生へお届けします。</p>
+            <div class="tagrow">
+              <span class="pill">大学生・高校生向け</span><span class="pill">代表が直接登壇</span><span class="pill">対面／オンライン</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="lead center" style="margin-top:30px"><span class="gold">すべては、「みんなにちからを」を実現するために。</span></p>
+    </div>
+  </section>
+
+  <!-- MESSAGE / PROFILE -->
+  <section id="message" class="sec-alt">
+    <div class="wrap reveal">
+      <div class="kicker">MESSAGE ── 代表挨拶</div>
+      <h2 class="title">採用のすべてを知る参謀が、経営の隣に。</h2>
+      <div class="msg-grid" style="margin-top:30px">
+        <div class="profile-card">
+          <div class="avatar compass"><svg><use href="#compass"/></svg></div>
+          <div class="pname">野入 卓也</div>
+          <div class="prole">代表取締役社長</div>
+          <div class="prole">大阪府出身 / 1984年生まれ</div>
+          <div class="pyears">人材領域 20年</div>
+        </div>
+        <div class="greeting">
+          <p>はじめまして、株式会社ミナチカ代表の野入卓也です。私は人材の領域で20年、幅広い現場を経験してきました。求人メディア（アルバイト・新卒・中途）の営業に始まり、教育機関向けの渉外、人材紹介事業者様向けの渉外、そしてリクルートエージェントでのリクルーティングアドバイザー（RA）まで——採用に関わるあらゆる立場を歩んできました。</p>
+          <p>だからこそ、企業のみなさまには、<span class="gold">採用のサポートも、最適な採用チャネルの選定も</span>、実体験に基づいてご支援できます。そしてこれから社会に出る学生のみなさんや、転職を考える方々には、採用の“リアル”を等身大でお伝えできます。</p>
+          <p>社名の「ミナチカ」に込めたのは、<span class="gold">「みんなにちからを」</span>という想い。働く人も、採用する企業も、これから社会に出る人も。関わるすべての人が自分のちからを発揮できるよう、これまでの経験とAIという新しい武器で伴走していきます。まずは、お気軽にご相談ください。</p>
+          <p class="sign">株式会社ミナチカ　代表取締役社長　野入 卓也</p>
+
+          <div class="timeline">
+            <div class="tl"><div class="yr">2006</div><div class="ev">リクルート関西代理店（現・株式会社シグナル）へ新卒入社。</div></div>
+            <div class="tl"><div class="yr">2010</div><div class="ev">（株）リクルートへ入社。大学の就職支援を推進。</div></div>
+            <div class="tl"><div class="yr">受賞</div><div class="ev">Vision Mission Award グランプリを2度受賞（2014・2018）。</div></div>
+            <div class="tl"><div class="yr">2020</div><div class="ev">人材紹介向けの渉外（リクルートダイレクトスカウト）と、リクルートエージェントのアドバイザー（RA）を歴任。</div></div>
+            <div class="tl"><div class="yr">2026</div><div class="ev">「みんなにちからを」を掲げ、株式会社ミナチカとして独立。</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap reveal">
+      <div class="kicker" style="text-align:center">CONTACT ── お問い合わせ</div>
+      <h2 class="title">採用のすべてを知る参謀が、<br><span class="hilite">経営の、いちばん近くに。</span></h2>
+      <p class="lead" style="margin-top:18px">採用戦略も、生成AI活用も、キャリア教育も。まずはお気軽にご相談ください。<span class="gold">ご相談は無料です。</span></p>
+      <div style="margin-top:30px">
+        <a class="btn" href="#" onclick="return false" aria-disabled="true" style="opacity:.7;cursor:not-allowed">お問い合わせフォーム（準備中）</a>
+      </div>
+      <p class="note">※ お問い合わせ窓口は、法人登記後に専用フォームを開設予定です。</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot">
+    <div class="fbrand"><span class="mark compass"><svg><use href="#compass"/></svg></span>株式会社ミナチカ</div>
+    <div>みんなに、ちからを。　／　© 2026 MINACHIKA Inc.</div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
