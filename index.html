@@ -42,9 +42,9 @@
   }
   .nav{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;
     padding:14px 24px;gap:16px}
-  .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:19px;letter-spacing:.02em}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:19px;letter-spacing:.02em;white-space:nowrap;flex:0 0 auto}
   .brand .mark{width:34px;height:34px;flex:0 0 34px}
-  .navlinks{display:flex;gap:26px;align-items:center;font-size:15px;color:var(--ice)}
+  .navlinks{display:flex;gap:20px;align-items:center;font-size:15px;color:var(--ice);white-space:nowrap}
   .navlinks a{transition:color .2s} .navlinks a:hover{color:var(--gold)}
   .btn{
     display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;
@@ -54,7 +54,7 @@
   .btn:hover{background:var(--gold-d);transform:translateY(-1px)}
   .btn-ghost{background:transparent;color:var(--gold);border:1.5px solid var(--gold)}
   .btn-ghost:hover{background:rgba(217,164,65,.12);color:var(--gold)}
-  @media(max-width:820px){.navlinks{display:none}}
+  @media(max-width:960px){.navlinks{display:none}}
   @media(max-width:560px){
     .nav{padding:12px 16px;gap:10px}
     .brand{font-size:15px;gap:8px}
@@ -130,6 +130,15 @@
   .svc .tagrow{margin-top:10px}
   .domain-label{color:var(--gold);font-weight:700;font-size:15px;letter-spacing:.08em;margin:34px 0 14px}
 
+  /* ---------- kaizen cases ---------- */
+  .cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;margin-top:30px}
+  .kcard{background:var(--navy2);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .kcard h4{font-size:18px;font-weight:700;color:var(--white);margin-bottom:12px}
+  .krow{font-size:15px;line-height:1.55;margin:7px 0;color:var(--ice);display:flex;gap:8px}
+  .krow .kl{flex:0 0 54px;font-weight:700;font-size:13px;color:var(--muted);padding-top:2px}
+  .krow.kaft .kl{color:var(--gold)}
+  .keff{margin-top:14px;display:inline-block;background:rgba(217,164,65,.14);border:1px solid var(--gold);color:var(--gold);font-weight:700;font-size:15px;border-radius:999px;padding:5px 15px}
+
   /* ---------- message / profile ---------- */
   .msg-grid{display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:start}
   .profile-card{background:var(--navy2);border:1px solid var(--line);border-radius:18px;padding:30px;text-align:center}
@@ -179,6 +188,7 @@
       <a href="#mission">ミッション</a>
       <a href="#strength">強み</a>
       <a href="#services">サービス</a>
+      <a href="#cases">事例</a>
       <a href="plan.html">料金プラン</a>
       <a href="#message">代表挨拶</a>
       <a href="#contact">お問い合わせ</a>
@@ -298,9 +308,9 @@
   <section id="services">
     <div class="wrap reveal">
       <div class="kicker">SERVICE ── サービス全体像</div>
-      <h2 class="title">2つの領域を、3つのアドバイザリーで。</h2>
+      <h2 class="title">3つのアドバイザリーで、あらゆる組織を支援。</h2>
 
-      <div class="domain-label">企業のみなさまへ</div>
+      <div class="domain-label">採用を行う企業のみなさまへ</div>
       <div class="card">
         <div class="svc">
           <div class="no">01</div>
@@ -312,13 +322,17 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="domain-label">すべての組織のみなさまへ</div>
+      <div class="card">
         <div class="svc">
           <div class="no">02</div>
           <div>
             <h3>業務改善アドバイザリーサービス</h3>
-            <p>生成AI活用を軸に、“今いる人の生産性”を高める業務改善を助言。ツール選定から社内定着まで、採用を知り尽くした視点で伴走します。</p>
+            <p>生成AI活用を軸に、“今いる人の生産性”を高める業務改善を助言。企業・大学・団体など、あらゆる組織で、ツール選定から定着まで、代表自らも実践する視点で伴走します。</p>
             <div class="tagrow">
-              <span class="pill">生成AI活用</span><span class="pill">ツール選定・設計</span><span class="pill">社内定着支援</span><span class="pill">業務効率化</span>
+              <span class="pill">生成AI活用</span><span class="pill">ツール選定・設計</span><span class="pill">組織内定着支援</span><span class="pill">業務効率化</span>
             </div>
           </div>
         </div>
@@ -339,8 +353,57 @@
       </div>
       <p class="lead center" style="margin-top:30px"><span class="gold">すべては、「みんなにちからを」を実現するために。</span></p>
       <div class="center" style="margin-top:30px">
+        <a class="btn btn-ghost" href="#cases">業務改善の事例を見る →</a>
         <a class="btn" href="plan.html">料金プランを見る →</a>
       </div>
+    </div>
+  </section>
+
+  <!-- CASES : 業務改善の事例 -->
+  <section id="cases">
+    <div class="wrap reveal">
+      <div class="kicker">CASES ── 業務改善の事例</div>
+      <h2 class="title">生成AIで、こんなに変わる。</h2>
+      <p class="lead">現場のみなさまが、今のPCのまま。日々の業務がどう変わるかを、Before / After でご紹介します。</p>
+      <div class="cases-grid">
+        <div class="kcard">
+          <h4>提案・報告資料の作成</h4>
+          <div class="krow"><span class="kl">Before</span>白紙から手作業。構成に悩み、体裁調整に数時間。</div>
+          <div class="krow kaft"><span class="kl">After</span>要点を渡すだけで、構成・文面・体裁までドラフト完成。</div>
+          <div class="keff">約3時間 → 45分</div>
+        </div>
+        <div class="kcard">
+          <h4>Excelの集計・分析・グラフ化</h4>
+          <div class="krow"><span class="kl">Before</span>関数・ピボットを手作業。集計とグラフ化に半日。</div>
+          <div class="krow kaft"><span class="kl">After</span>元データを渡すと、集計表・グラフ＋気づきまで自動。</div>
+          <div class="keff">半日 → 30分</div>
+        </div>
+        <div class="kcard">
+          <h4>繰り返しの集計・レポートを自動化</h4>
+          <div class="krow"><span class="kl">Before</span>毎回、複数ファイルから手作業で転記・集計。</div>
+          <div class="krow kaft"><span class="kl">After</span>一度“型”を決めれば、渡すだけで繰り返し自動作成。</div>
+          <div class="keff">毎回 半日 → 数分</div>
+        </div>
+        <div class="kcard">
+          <h4>議事録・案内文の作成</h4>
+          <div class="krow"><span class="kl">Before</span>会議後に一から清書。定型文を毎回手打ち。</div>
+          <div class="krow kaft"><span class="kl">After</span>メモを渡すと、要約議事録・決定事項・宿題まで整理。</div>
+          <div class="keff">1時間 → 10分</div>
+        </div>
+        <div class="kcard">
+          <h4>アンケート自由記述の集計</h4>
+          <div class="krow"><span class="kl">Before</span>数百件の自由記述を目視で読み、分類に数日。</div>
+          <div class="krow kaft"><span class="kl">After</span>まとめて要約・分類し、代表的な声まで抽出。</div>
+          <div class="keff">約3日 → 1時間</div>
+        </div>
+        <div class="kcard">
+          <h4>案内ページ・申込フォームの制作</h4>
+          <div class="krow"><span class="kl">Before</span>外注や情報部門待ちで、数週間＋費用がかかる。</div>
+          <div class="krow kaft"><span class="kl">After</span>会社説明会・イベントの案内やフォームを短時間で自作。</div>
+          <div class="keff">数週間 → 即日</div>
+        </div>
+      </div>
+      <p class="lead center" style="margin-top:26px;color:var(--muted);font-size:15px">※ 時間はあくまで目安です（業務量により異なります）。代表自身も Claude（Cowork/Code）で日常的に実践しています。</p>
     </div>
   </section>
 
